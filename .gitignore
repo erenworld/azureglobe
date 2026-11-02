@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js build output
+.next/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
+
+# Environment variables (secrets)
+.env
+.env*.local
+.env.*
+!.env.example
+
+# Deploy / tooling
+.vercel/
+.turbo/
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
