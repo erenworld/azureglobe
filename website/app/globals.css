@@ -1,0 +1,60 @@
+/* Global reset, design tokens and base element styles.
+   Component styles live next to each component (*.module.css). */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #fff;
+  --bg-elevated: oklch(0.97 0.005 250);
+  --text: oklch(0.25 0.02 250);
+  --text-dim: oklch(0.55 0.02 250);
+  --ink: lab(36 55.64 -107.68);
+  --ink-dim: lab(93 0 -8);
+  --border: oklch(0.9 0.005 80);
+  --azure: #0078d4;
+  --latency-good: #27b648;
+  --latency-ok: #f2b600;
+  --latency-bad: #ff455d;
+}
+
+html {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-pixel), monospace;
+  font-feature-settings: 'ss05';
+  line-height: 1.6;
+  letter-spacing: 0.015em;
+  word-spacing: -0.1em;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+::selection {
+  background: var(--ink-dim);
+  color: var(--ink);
+}
+
+code {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.9em;
+  color: var(--ink);
+}
