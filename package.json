@@ -1,0 +1,15 @@
+{
+  "name": "azureglobe",
+  "private": true,
+  "license": "MIT",
+  "repository": "erenworld/azurespeed",
+  "scripts": {
+    "dev": "pnpm --filter azureglobe-site dev",
+    "build": "pnpm --filter azureglobe-site build",
+    "start": "pnpm --filter azureglobe-site start",
+    "lint": "pnpm --filter azureglobe-site lint",
+    "typecheck": "pnpm --filter azureglobe-site typecheck",
+    "format": "pnpm --filter azureglobe-site format"
+  },
+  "packageManager": "pnpm@8.7.0+sha512.1d61f8c10e8a5a5dbfbddea0f1f5efb7dbd5177223073aec953cf230aa46416884b9427a6421dba78f28ad0f93fbede38ba57083237b350243de6b1e3a8ce71d"
+}
