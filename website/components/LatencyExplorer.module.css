@@ -1,0 +1,21 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 2rem;
+  align-items: start;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.stage {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
