@@ -13,8 +13,6 @@ pnpm install
 pnpm dev
 ```
 
-Then open http://localhost:3000.
-
 ## Scripts
 
 | Command | What it does |
