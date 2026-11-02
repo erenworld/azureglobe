@@ -11,13 +11,15 @@ export type Endpoints = Record<string, string>;
 
 const WARMUP = 1;
 export const SAMPLES = 4;
+// Files in public/ live under the base path too (see next.config.js).
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 const TIMEOUT_MS = 5000;
 const CONCURRENCY = 6;
 
 /** Endpoints written by infra/deploy.sh, or null when none are deployed. */
 export async function loadEndpoints(): Promise<Endpoints | null> {
   try {
-    const res = await fetch('/endpoints.json', { cache: 'no-store' });
+    const res = await fetch(`${BASE_PATH}/endpoints.json`, { cache: 'no-store' });
     if (!res.ok) return null;
     const data = (await res.json()) as Endpoints;
     return Object.keys(data).length ? data : null;
