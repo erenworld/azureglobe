@@ -1,0 +1,84 @@
+.button {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  z-index: 10;
+  display: inline-flex;
+  gap: 0.55rem;
+  align-items: center;
+  padding: 0.45rem 0.8rem 0.45rem 0.6rem;
+  border: 1.5px solid var(--ink);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+
+.button:hover {
+  opacity: 1;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.star {
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0 0 3px rgb(251 191 36 / 60%));
+  animation: bob 1.6s steps(4) infinite;
+}
+
+.button:hover .star {
+  animation:
+    spin 0.6s steps(6) 1,
+    bob 1.6s steps(4) 0.6s infinite;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -3px;
+  }
+}
+
+@keyframes spin {
+  from {
+    rotate: 0deg;
+    scale: 1.15;
+  }
+
+  to {
+    rotate: 360deg;
+    scale: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star,
+  .button:hover .star {
+    animation: none;
+  }
+}
+
+/* On phones: centered, at the very top of the page. */
+@media (max-width: 640px) {
+  .button {
+    position: static;
+    align-self: center;
+    margin-top: 1rem;
+  }
+}
