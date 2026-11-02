@@ -1,0 +1,6 @@
+.next
+node_modules
+pnpm-lock.yaml
+# Generated from Microsoft's latency tables (one region per line on purpose).
+lib/azure-data.ts
+next-env.d.ts
