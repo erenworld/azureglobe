@@ -1,0 +1,201 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: 600px;
+  border: 1.5px solid var(--ink);
+}
+
+/* ── Origin select ── */
+
+.select {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.select select {
+  flex: 1;
+  min-width: 0;
+  padding: 0.25rem 0.4rem;
+  border: 1px solid rgb(255 255 255 / 40%);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--bg);
+  font: inherit;
+  font-size: 0.75rem;
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.select option {
+  color: var(--text);
+}
+
+/* ── Live test ── */
+
+.live {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}
+
+.live button {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1.5px solid var(--ink);
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+
+.live button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.live button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.progress {
+  flex: 1;
+  height: 6px;
+  overflow: hidden;
+  background: var(--border);
+}
+
+.progress i {
+  display: block;
+  height: 100%;
+  background: var(--azure);
+  transition: width 0.3s;
+}
+
+/* ── Summary ── */
+
+.meta {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}
+
+.meta code {
+  color: var(--azure);
+}
+
+/* ── Region list ── */
+
+.list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.list button {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 64px 48px;
+  gap: 0.6rem;
+  align-items: center;
+  width: 100%;
+  padding: 0.4rem 0.75rem;
+  border: 0;
+  background: none;
+  color: var(--text);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.list button:hover,
+.list .active {
+  background: var(--bg-elevated);
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.name small {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+}
+
+.bar {
+  height: 4px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--border);
+}
+
+.bar i {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.bar .good {
+  background: var(--latency-good);
+}
+
+.bar .ok {
+  background: var(--latency-ok);
+}
+
+.bar .bad {
+  background: var(--latency-bad);
+}
+
+.ms {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Darker shades: readable as text on white. */
+.ms.good {
+  color: #1b8f37;
+}
+
+.ms.ok {
+  color: #b08400;
+}
+
+.ms.bad {
+  color: #e0283f;
+}
+
+@media (max-width: 860px) {
+  .panel {
+    max-height: 420px;
+  }
+}
