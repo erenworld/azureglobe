@@ -1,0 +1,23 @@
+.header {
+  max-width: 560px;
+  text-align: center;
+}
+
+.header h1 {
+  font-family: var(--font-pixel-line), var(--font-pixel), monospace;
+  font-size: clamp(2.2rem, 7vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--azure);
+}
+
+.header h1 span {
+  color: var(--text);
+}
+
+.header p {
+  margin-top: 1rem;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 1rem;
+  color: var(--text-dim);
+}
