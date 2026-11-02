@@ -13,32 +13,6 @@ pnpm install
 pnpm dev
 ```
 
-## Scripts
-
-| Command | What it does |
-| --- | --- |
-| `pnpm dev` | Start the dev server |
-| `pnpm build` | Production build |
-| `pnpm lint` | ESLint (Next.js core-web-vitals + TypeScript rules) |
-| `pnpm typecheck` | TypeScript, no emit |
-| `pnpm format` | Prettier |
-
-## Project structure
-
-```
-website/
-├── app/                  Next.js App Router: layout, page, global styles, fonts
-├── components/
-│   ├── LatencyExplorer   Client state: origin, hover, live test → globe + panel
-│   ├── globe/            MapLibre globe: styles, GeoJSON, layers, controls
-│   ├── panel/            Origin select, live test button, ranked region list
-│   ├── layout/           Site header and footer
-│   └── ui/               Legend, GitHub star button
-├── hooks/useLiveTest     Runs the in-browser latency test
-└── lib/                  Pure logic: Azure data, geo math, latency bands, views
-infra/                    Scripts that create / delete the Azure endpoints
-```
-
 ## Live latency test
 
 The "Test from my browser" button measures the latency from the visitor's browser to every Azure region: for each region it sends one warm-up HTTPS request (DNS + TLS), then 4 timed requests to a tiny public file hosted in that region, and keeps the median.
