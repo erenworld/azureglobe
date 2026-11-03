@@ -11,8 +11,8 @@ listed from fastest to slowest.
 Run locally
 -----------
 
-    git clone https://github.com/erenworld/azurespeed.git
-    cd azurespeed
+    git clone https://github.com/erenworld/azureglobe.git
+    cd azureglobe
     pnpm install
     pnpm dev
 
